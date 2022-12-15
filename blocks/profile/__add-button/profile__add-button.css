@@ -13,9 +13,10 @@
 .profile__add-button:hover {
     opacity: 0.6;
     transition: 0.5s;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 879px) {
+@media screen and (max-width: 890px) {
     .profile__add-button  {
         width: 282px;
         background-image: url("../../../images/max-add-button.svg");

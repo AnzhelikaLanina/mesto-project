@@ -1,6 +1,14 @@
 .profile__container {
-    padding: 0 0 16px;
+    padding: 0 0 14px;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: center;
+}
+
+@media screen and (max-width: 890px) {
+    .profile__container  {
+        min-width: 282px;
+        position: relative;
+        justify-content: center;
+    }
 }

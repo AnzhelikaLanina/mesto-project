@@ -1,0 +1,16 @@
+.pop-up__fieldset {
+    margin: 0;
+    padding: 51px 0 48px;
+    min-width: 358px;
+    border: none;
+}
+
+@media screen and (max-width: 540px) {
+    .pop-up__fieldset {
+        margin: 0 auto;
+        padding-top: 72px;
+        padding-bottom: 45px;
+        max-width: 282px;
+        min-width:0;
+    }
+}

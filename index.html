@@ -22,7 +22,7 @@
                     <p class="profile__caption">Исследователь океана</p>
                 </div>
             </div>
-            <button type="button" class="profile__add-button"></button>
+            <button type="button" class="profile__add-button" aria-label="Редактировать профиль"></button>
         </section>
         <section>
             <ul class="elements">
@@ -30,65 +30,61 @@
                     <img class='element__image' src="images/photo-mechelen.jpeg" alt="Мехелен">
                     <div class="element__caption">
                         <h2 class="element__text">Мехелен</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img class='element__image' src="images/photo-emden.jpeg" alt="Эмден">
                     <div class="element__caption">
                         <h2 class="element__text">Эмден</h2>
-                        <button type="button" class="element__like-button element__like-button_active"></button>
+                        <button type="button" class="element__like-button element__like-button_active" aria-label="Поставить лайк"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img class='element__image' src="images/photo-komi-republic.jpeg" alt="Республика Коми">
                     <div class="element__caption">
                         <h2 class="element__text">Республика Коми</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img class='element__image' src="images/photo-koyasan.jpeg" alt="гора Коя-сан">
                     <div class="element__caption">
                         <h2 class="element__text">Гора Коя-сан</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img class='element__image' src="images/photo-paris.jpeg" alt="Париж">
                     <div class="element__caption">
                         <h2 class="element__text">Париж</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
                     </div>
                 </li>
                 <li class="element">
                     <img class='element__image' src="images/photo-shanxi.jpeg" alt="Шаньси">
                     <div class="element__caption">
                         <h2 class="element__text">Шаньси</h2>
-                        <button type="button" class="element__like-button"></button>
+                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
                     </div>
                 </li>
             </ul>
-        </section>
-        <section class="pop-up pop-up_opened">
-            <div class="pop-up__main-container">
-                <button type="button" class="pop-up__close-icon"></button>
-                <form class="pop-up__form">
-                    <h2 class="pop-up__title">Редактировать профиль</h2>
-                    <div class="pop-up__container">
-                        <label>
-                            <input type="text" class="pop-up__text" placeholder="Жак-Ив Кусто">
-                        </label>
-                        <label>
-                            <input type="text" class="pop-up__text" placeholder="Исследователь океана">
-                        </label>
-                    </div>
-                    <button type="button" class="pop-up__save-button">Сохранить</button>
-                </form>
-            </div>
         </section>
     </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
+    <div class="pop-up pop-up_edit-profile pop-up_opened">
+        <div class="pop-up__container">
+            <button type="button" class="pop-up__close-button" aria-label="Закрыть окно"></button>
+            <form class="pop-up__form" name="edit-form">
+                <h2 class="pop-up__title">Редактировать профиль</h2>
+                <fieldset class="pop-up__fieldset">
+                    <input name="name" type="text" class="pop-up__field" placeholder="Жак-Ив Кусто">
+                    <input name="caption" type="text" class="pop-up__field" placeholder="Исследователь океана">
+                </fieldset>
+                <button type="submit" class="pop-up__submit-button">Сохранить</button>
+            </form>
+        </div>
+    </div>
 </body>

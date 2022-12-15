@@ -1,9 +1,10 @@
-.pop-up__save-button {
+.pop-up__submit-button {
     margin: 0;
     padding: 0;
     width: 358px;
     height: 50px;
-    border: 2px solid #000000;
+    border: none;
+    border-radius: 2px;
     color:#FFFFFF;
     font-weight: 400;
     font-size: 18px;
@@ -11,13 +12,14 @@
     background-color: #000000;
 }
 
-.pop-up__save-button:hover {
+.pop-up__submit-button:hover {
     opacity: 0.8;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 540px) {
-    .pop-up__save-button {
+    .pop-up__submit-button {
         width: 238px;
         height: 46px;
         font-size: 14px;
