@@ -21,5 +21,5 @@
 
 ## GitHub Pages
 
-* [Проект на GitHub Pages]()
+* [Проект на GitHub Pages](https://anzhelikalanina.github.io/mesto-project/)
 
