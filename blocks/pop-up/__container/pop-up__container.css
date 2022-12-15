@@ -1,0 +1,15 @@
+.pop-up__container {
+    margin: 0;
+    padding: 54px 0 48px;
+    min-width: 358px;
+}
+
+@media screen and (max-width: 540px) {
+    .pop-up__container {
+        margin: 0 auto;
+        padding-top: 75px;
+        padding-bottom: 45px;
+        max-width: 282px;
+        min-width:0;
+    }
+}

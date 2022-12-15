@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="images/logo.svg" alt="логотип место">
+    </header>
+    <main>
+        <section class="profile">
+            <div class="profile__card">
+                <img class="profile__avatar" src="images/avatar.jpg" alt="изображения профиля">
+                <div class="profile__info">
+                    <div class="profile__container">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <button type="button" class="profile__edit-button"></button>
+                    </div>
+                    <p class="profile__caption">Исследователь океана</p>
+                </div>
+            </div>
+            <button type="button" class="profile__add-button"></button>
+        </section>
+        <section>
+            <ul class="elements">
+                <li class="element">
+                    <img class='element__image' src="images/photo-mechelen.jpeg" alt="Мехелен">
+                    <div class="element__caption">
+                        <h2 class="element__text">Мехелен</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class='element__image' src="images/photo-emden.jpeg" alt="Эмден">
+                    <div class="element__caption">
+                        <h2 class="element__text">Эмден</h2>
+                        <button type="button" class="element__like-button element__like-button_active"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class='element__image' src="images/photo-komi-republic.jpeg" alt="Республика Коми">
+                    <div class="element__caption">
+                        <h2 class="element__text">Республика Коми</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class='element__image' src="images/photo-koyasan.jpeg" alt="гора Коя-сан">
+                    <div class="element__caption">
+                        <h2 class="element__text">Гора Коя-сан</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class='element__image' src="images/photo-paris.jpeg" alt="Париж">
+                    <div class="element__caption">
+                        <h2 class="element__text">Париж</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
+                </li>
+                <li class="element">
+                    <img class='element__image' src="images/photo-shanxi.jpeg" alt="Шаньси">
+                    <div class="element__caption">
+                        <h2 class="element__text">Шаньси</h2>
+                        <button type="button" class="element__like-button"></button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="pop-up pop-up_opened">
+            <div class="pop-up__main-container">
+                <button type="button" class="pop-up__close-icon"></button>
+                <form class="pop-up__form">
+                    <h2 class="pop-up__title">Редактировать профиль</h2>
+                    <div class="pop-up__container">
+                        <label>
+                            <input type="text" class="pop-up__text" placeholder="Жак-Ив Кусто">
+                        </label>
+                        <label>
+                            <input type="text" class="pop-up__text" placeholder="Исследователь океана">
+                        </label>
+                    </div>
+                    <button type="button" class="pop-up__save-button">Сохранить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+</body>
