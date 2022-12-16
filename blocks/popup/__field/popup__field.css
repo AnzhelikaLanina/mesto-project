@@ -1,4 +1,4 @@
-.pop-up__field {
+.popup__field {
     margin: 0;
     padding: 0;
     max-width: 358px;
@@ -11,16 +11,16 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.pop-up__field:nth-of-type(n+1) {
+.popup__field:nth-of-type(n+1) {
     padding-bottom: 12px;
 }
 
-.pop-up__field:last-of-type {
+.popup__field:last-of-type {
     padding-top: 27px;
 }
 
 @media screen and (max-width: 540px) {
-    .pop-up__field {
+    .popup__field {
         max-width: 238px;
     }
 }

@@ -1,6 +1,6 @@
 .profile__caption {
     margin: 0;
-    padding: 0;
+    padding: 14px 0 0;
     max-width: 336px;
     font-weight: 400;
     font-size: 18px;
@@ -13,6 +13,7 @@
 @media screen and (max-width: 580px) {
     .profile__caption  {
         max-width: 282px;
+        padding-top: 6px;
         font-size: 14px;
         line-height: 17px;
     }
