@@ -17,74 +17,66 @@
                 <div class="profile__info">
                     <div class="profile__container">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <button type="button" class="profile__edit-button"></button>
+                        <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
                     </div>
                     <p class="profile__caption">Исследователь океана</p>
                 </div>
             </div>
-            <button type="button" class="profile__add-button" aria-label="Редактировать профиль"></button>
+            <button type="button" class="profile__add-button" aria-label="Добавить"></button>
         </section>
         <section>
             <ul class="elements">
-                <li class="element">
-                    <img class='element__image' src="images/photo-mechelen.jpeg" alt="Мехелен">
-                    <div class="element__caption">
-                        <h2 class="element__text">Мехелен</h2>
-                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class='element__image' src="images/photo-emden.jpeg" alt="Эмден">
-                    <div class="element__caption">
-                        <h2 class="element__text">Эмден</h2>
-                        <button type="button" class="element__like-button element__like-button_active" aria-label="Поставить лайк"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class='element__image' src="images/photo-komi-republic.jpeg" alt="Республика Коми">
-                    <div class="element__caption">
-                        <h2 class="element__text">Республика Коми</h2>
-                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class='element__image' src="images/photo-koyasan.jpeg" alt="гора Коя-сан">
-                    <div class="element__caption">
-                        <h2 class="element__text">Гора Коя-сан</h2>
-                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class='element__image' src="images/photo-paris.jpeg" alt="Париж">
-                    <div class="element__caption">
-                        <h2 class="element__text">Париж</h2>
-                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
-                    </div>
-                </li>
-                <li class="element">
-                    <img class='element__image' src="images/photo-shanxi.jpeg" alt="Шаньси">
-                    <div class="element__caption">
-                        <h2 class="element__text">Шаньси</h2>
-                        <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
-                    </div>
-                </li>
+
             </ul>
         </section>
     </main>
     <footer class="footer">
         <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <div class="popup" id="popup_edit-form">
         <div class="popup__container">
             <button type="button" class="popup__close-button" aria-label="Закрыть окно"></button>
             <form class="popup__form" name="edit-form">
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <fieldset class="popup__fieldset">
-                    <input name="name" type="text" class="popup__field" placeholder="Жак-Ив Кусто">
-                    <input name="caption" type="text" class="popup__field" placeholder="Исследователь океана">
+                    <input name="name" id="popup__name" type="text" class="popup__field" placeholder="Жак-Ив Кусто">
+                    <input name="caption" id="popup__caption" type="text" class="popup__field" placeholder="Исследователь океана">
+                </fieldset>
+                <button type="submit" id='edit-save' class="popup__submit-button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup" id='popup_add-form'>
+        <div class="popup__container">
+            <button type="button" class="popup__close-button" aria-label="Закрыть окно"></button>
+            <form class="popup__form" name="edit-form">
+                <h2 class="popup__title">Новое место</h2>
+                <fieldset class="popup__fieldset">
+                    <input name="name" id="popup__name-card" type="text" class="popup__field" placeholder="Название">
+                    <input name="caption" id="popup__link" type="text" class="popup__field" placeholder="Ссылка на картинку">
                 </fieldset>
                 <button type="submit" class="popup__submit-button">Сохранить</button>
             </form>
         </div>
     </div>
+    <div class="popup popup_show-image" id='popup_show-image'>
+        <figure class="popup__figure">
+            <button type="button" class="popup__close-button" aria-label="Закрыть окно"></button>
+            <img class='popup__image' src="#" alt="#">
+            <figcaption class="popup__caption"></figcaption>
+        </figure>
+    </div>
+
+    <template id="card" >
+        <li class="element">
+            <button type="button" class="element__delete-button" aria-label="Удалить"></button>
+            <img class='element__image' src="#" alt="#">
+            <div class="element__caption">
+                <h2 class="element__text"></h2>
+                <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
+            </div>
+        </li>
+    </template>
+
+    <script src="script.js"></script>
 </body>
