@@ -1,51 +1,46 @@
 const initialList = document.querySelector('.elements');
 const initialTemplate = document.querySelector('#card').content;
 initialCards.forEach(function (element) {
-    const initialCardsElement = initialTemplate.cloneNode(true);
-    const initialCardsImage = initialCardsElement.querySelector('.element__image');
-
-    initialCardsElement.querySelector('.element__text').textContent = element.name;
-    initialCardsImage.src = element.link;
-    initialCardsImage.alt = element.name;
-    createCard(initialCardsElement);
+    const name = element.name;
+    const link = element.link;
+    const initialCardsElement = createCard(name, link);
 
     initialList.append(initialCardsElement);
 })
 
+const popupEditProfile = document.querySelector('#popup_edit-form');
+const buttonEditProfile = document.querySelector('.profile__edit-button');
+const popupAddForm = document.querySelector('#popup_add-form');
+const buttonAddForm = document.querySelector('.profile__add-button');
 function openPopup(popup) {
     popup.classList.add('popup_opened');
 }
 
-const popupEditProfile = document.querySelector('#popup_edit-form');
-const buttonEditProfile = document.querySelector('.profile__edit-button');
-
 buttonEditProfile.addEventListener('click', function(){
+    nameInputPopupEditForm.value = nameProfile.textContent;
+    jobInputPopupEditForm.value = jobProfile.textContent;
     openPopup(popupEditProfile);
 })
-
-const popupAddForm = document.querySelector('#popup_add-form');
-const buttonAddForm = document.querySelector('.profile__add-button');
 
 buttonAddForm.addEventListener('click', function(){
     openPopup(popupAddForm);
 })
 
+const buttonClosePopupEditProfile = popupEditProfile.querySelector('.popup__close-button');
+const buttonClosePopupAddForm = popupAddForm.querySelector('.popup__close-button');
+const popupShowImage = document.querySelector('#popup_show-image');
+const buttonClosePopupShowImage = popupShowImage.querySelector('.popup__close-button');
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
 }
 
-const buttonClosePopupEditProfile = popupEditProfile.querySelector('.popup__close-button');
 buttonClosePopupEditProfile.addEventListener('click', function(){
     closePopup(popupEditProfile);
 });
 
-const buttonClosePopupAddForm = popupAddForm.querySelector('.popup__close-button');
 buttonClosePopupAddForm.addEventListener('click', function(){
     closePopup(popupAddForm);
 })
-
-const popupShowImage = document.querySelector('#popup_show-image');
-const buttonClosePopupShowImage = popupShowImage.querySelector('.popup__close-button');
 
 buttonClosePopupShowImage.addEventListener('click', function(){
     closePopup(popupShowImage);
@@ -56,13 +51,12 @@ const nameInputPopupEditForm = elementPopupEditForm.querySelector('#popup__name'
 const jobInputPopupEditForm = elementPopupEditForm.querySelector('#popup__caption');
 const nameProfile = document.querySelector('.profile__name');
 const jobProfile = document.querySelector('.profile__caption');
-nameInputPopupEditForm.value = nameProfile.textContent;
-jobInputPopupEditForm.value = jobProfile.textContent;
 
 function editProfile (evt) {
     evt.preventDefault();
     const newNameProfile = nameInputPopupEditForm.value;
     const newJobProfile = jobInputPopupEditForm.value;
+
     nameProfile.textContent = newNameProfile;
     jobProfile.textContent = newJobProfile;
 
@@ -71,7 +65,6 @@ function editProfile (evt) {
 
 elementPopupEditForm.addEventListener('submit', editProfile);
 
-
 const imagePopupShowImage = popupShowImage.querySelector('.popup__image');
 const captionPopupShowImage = popupShowImage.querySelector('.popup__caption');
 
@@ -79,6 +72,7 @@ function showImage(image,caption) {
      imagePopupShowImage.src = image.src;
      imagePopupShowImage.alt = caption.textContent;
      captionPopupShowImage.textContent = caption.textContent;
+
      openPopup(popupShowImage);
 }
 
@@ -91,34 +85,40 @@ function showImage(image,caption) {
       element.classList.toggle('element__like-button_active');
 }
 
-function createCard(card) {
-    const buttonLike = card.querySelector('.element__like-button');
-    const buttonDelete = card.querySelector('.element__delete-button');
-    const imageShow = card.querySelector('.element__image');
-    const captionShow = card.querySelector('.element__text');
+function createCard(name, link) {
+    const initialCardsElement = initialTemplate.cloneNode(true);
+    const initialCardsImage = initialCardsElement.querySelector('.element__image');
+    const buttonLike = initialCardsElement.querySelector('.element__like-button');
+    const buttonDelete = initialCardsElement.querySelector('.element__delete-button');
+    const imageShow = initialCardsElement.querySelector('.element__image');
+    const captionShow = initialCardsElement.querySelector('.element__text');
+
+    initialCardsElement.querySelector('.element__text').textContent = name;
+    initialCardsImage.src = link;
+    initialCardsImage.alt = name;
+
     buttonLike.addEventListener('click', function() {
         likeCard(buttonLike);
     });
     imageShow.addEventListener('click',function() {
         showImage(imageShow,captionShow);
     });
-    buttonDelete.addEventListener('click',deleteCard)
+    buttonDelete.addEventListener('click',deleteCard);
+
+    return initialCardsElement;
 }
 
-const addFormElement = popupAddForm.querySelector('.popup__form');
+const formAddCard = popupAddForm.querySelector('.popup__form');
 const nameCardInputPopupAddForm = popupAddForm.querySelector('#popup__name-card');
 const linkInputPopupAddForm = popupAddForm.querySelector('#popup__link');
-addFormElement.addEventListener('submit', function (evt) {
+formAddCard.addEventListener('submit', function (evt) {
     evt.preventDefault();
-    const cardElement = initialTemplate.cloneNode(true);
-    cardElement.querySelector('.element__text').textContent = nameCardInputPopupAddForm.value;
-    cardElement.querySelector('.element__image').alt = nameCardInputPopupAddForm.value;
-    cardElement.querySelector('.element__image').src = linkInputPopupAddForm.value;
-    createCard(cardElement);
+    const name = nameCardInputPopupAddForm.value;
+    const link = linkInputPopupAddForm.value;
+    const cardsElement = createCard(name, link);
 
-    initialList.prepend(cardElement);
-    nameCardInputPopupAddForm.value = '';
-    linkInputPopupAddForm.value = '';
+    initialList.prepend(cardsElement);
+    formAddCard.reset ();
 
     closePopup(popupAddForm);
 })
