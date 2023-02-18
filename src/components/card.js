@@ -6,7 +6,7 @@ function deleteCard(element) {
     initialList.removeChild(elementCard);
 }
 
-function likeCard(element) {
+function toggleLike(element) {
     element.classList.toggle('element__like-button_active');
 }
 
@@ -23,7 +23,6 @@ export function createCard(name, link) {
     const initialCardsImage = initialCardsElement.querySelector('.element__image');
     const buttonLike = initialCardsElement.querySelector('.element__like-button');
     const buttonDelete = initialCardsElement.querySelector('.element__delete-button');
-    const imageShow = initialCardsElement.querySelector('.element__image');
     const captionShow = initialCardsElement.querySelector('.element__text');
 
     initialCardsElement.querySelector('.element__text').textContent = name;
@@ -31,10 +30,10 @@ export function createCard(name, link) {
     initialCardsImage.alt = name;
 
     buttonLike.addEventListener('click', function() {
-        likeCard(buttonLike);
+        toggleLike(buttonLike);
     });
-    imageShow.addEventListener('click',function() {
-        showImage(imageShow,captionShow);
+    initialCardsImage.addEventListener('click',function() {
+        showImage(initialCardsImage,captionShow);
     });
     buttonDelete.addEventListener('click',deleteCard);
 

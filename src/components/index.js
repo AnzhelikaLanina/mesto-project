@@ -2,34 +2,22 @@ import '../pages/index.css';
 import {enableValidation} from "./validate";
 import {openPopup, closePopup} from "./modal";
 import {createCard} from "./card";
-import {initialCards} from "./constants";
-
-export const formSelectors = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__field',
-    submitButtonSelector: '.popup__submit-button',
-    inactiveButtonClass: 'popup__submit-button_disabled',
-    inputErrorClass: 'popup__field_type_error',
-    errorClass: 'popup__field-error_active'
-}
+import {initialCards, settings} from "./constants";
 
 export const initialList = document.querySelector('.elements');
 export const initialTemplate = document.querySelector('#card').content;
 
 const popupEditProfile = document.querySelector('#popup_edit-form');
-const buttonClosePopupEditProfile = popupEditProfile.querySelector('.popup__close-button');
-const elementPopupEditForm = popupEditProfile.querySelector('.popup__form');
-const nameInputPopupEditForm = elementPopupEditForm.querySelector('#popup__name');
-const jobInputPopupEditForm = elementPopupEditForm.querySelector('#popup__caption');
+const formEditForm = document.forms['edit-form'];
+const nameInputPopupEditForm = formEditForm.elements['name'];
+const jobInputPopupEditForm = formEditForm.elements['caption'];
 
 const popupAddForm = document.querySelector('#popup_add-form');
-const buttonClosePopupAddForm = popupAddForm.querySelector('.popup__close-button');
-const formAddCard = popupAddForm.querySelector('.popup__form');
-const nameCardInputPopupAddForm = popupAddForm.querySelector('#popup__name-card');
-const linkInputPopupAddForm = popupAddForm.querySelector('#popup__link');
+const formAddCard = document.forms['add-form'];
+const nameCardInputPopupAddForm = formAddCard.elements['name-card'];
+const linkInputPopupAddForm = formAddCard.elements['link'];
 
 export const popupShowImage = document.querySelector('#popup_show-image');
-const buttonClosePopupShowImage = popupShowImage.querySelector('.popup__close-button');
 export const imagePopupShowImage = popupShowImage.querySelector('.popup__image');
 export const captionPopupShowImage = popupShowImage.querySelector('.popup__caption');
 
@@ -57,7 +45,7 @@ initialCards.forEach(function (element) {
     initialList.append(initialCardsElement);
 })
 
-buttonEditProfile.addEventListener('click', function(){
+buttonEditProfile.addEventListener('click', function( ){
     nameInputPopupEditForm.value = nameProfile.textContent;
     jobInputPopupEditForm.value = jobProfile.textContent;
     openPopup(popupEditProfile);
@@ -68,19 +56,13 @@ buttonAddForm.addEventListener('click', function(){
     openPopup(popupAddForm);
 })
 
-buttonClosePopupEditProfile.addEventListener('click', function(){
-    closePopup(popupEditProfile);
+const closeButtons = document.querySelectorAll('.popup__close-button');
+closeButtons.forEach((button) => {
+    const popup = button.closest('.popup');
+    button.addEventListener('click', () => closePopup(popup));
 });
 
-buttonClosePopupAddForm.addEventListener('click', function(){
-    closePopup(popupAddForm);
-})
-
-buttonClosePopupShowImage.addEventListener('click', function(){
-    closePopup(popupShowImage);
-})
-
-elementPopupEditForm.addEventListener('submit', editProfile);
+formEditForm.addEventListener('submit', editProfile);
 
 formAddCard.addEventListener('submit', function (evt) {
     evt.preventDefault();
@@ -93,7 +75,8 @@ formAddCard.addEventListener('submit', function (evt) {
 
     closePopup(popupAddForm);
 })
-enableValidation(formSelectors);
+
+enableValidation(settings);
 
 
 
