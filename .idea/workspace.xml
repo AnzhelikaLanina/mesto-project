@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="957bd2db-2365-467a-b2ff-5093ac409522" name="Changes" comment="the first review">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="957bd2db-2365-467a-b2ff-5093ac409522" name="Changes" comment="after the first review">
+      <change beforePath="$PROJECT_DIR$/blocks/header/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/header/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/__close-button/pop-up__close-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__close-button/popup__close-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/__container/pop-up__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/__field/pop-up__field.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__field/popup__field.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/__fieldset/pop-up__fieldset.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__fieldset/popup__fieldset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/__form/pop-up__form.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__form/popup__form.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/__submit-button/pop-up__submit-button.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__submit-button/popup__submit-button.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/__title/pop-up__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__title/popup__title.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/_edit-form/pop-up_edit-form.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/_opened/pop-up_opened.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/_opened/popup_opened.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/pop-up/pop-up.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__caption/profile__caption.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__caption/profile__caption.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/__container/profile__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/__container/profile__container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/profile/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/profile/profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,23 +38,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Applications/frontend/mesto-project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.tools",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Applications/frontend/mesto-project&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/blocks/popup/__fieldset" />
       <recent name="$PROJECT_DIR$/blocks/profile" />
       <recent name="$PROJECT_DIR$/vendor" />
     </key>
@@ -72,8 +71,6 @@
       <workItem from="1671105848221" duration="684000" />
       <workItem from="1671114999824" duration="8229000" />
       <workItem from="1671139610737" duration="3019000" />
-      <workItem from="1676737013869" duration="49000" />
-      <workItem from="1676986381080" duration="84587000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1671105685867</created>
@@ -96,14 +93,7 @@
       <option name="project" value="LOCAL" />
       <updated>1671138831924</updated>
     </task>
-    <task id="LOCAL-00004" summary="the first review">
-      <created>1677340749026</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1677340749026</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,7 +113,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="after the first review" />
-    <MESSAGE value="the first review" />
-    <option name="LAST_COMMIT_MESSAGE" value="the first review" />
+    <option name="LAST_COMMIT_MESSAGE" value="after the first review" />
   </component>
 </project>
