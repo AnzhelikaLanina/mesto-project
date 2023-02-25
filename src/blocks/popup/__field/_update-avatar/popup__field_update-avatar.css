@@ -1,0 +1,7 @@
+.popup__field_update-avatar:last-of-type {
+    padding-top: 0;
+}
+
+.popup__field_update-avatar:nth-of-type(n+1) {
+    padding-bottom: 10px;
+}

@@ -1,0 +1,9 @@
+.element__container {
+    overflow: hidden;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-column: 1;
+    grid-row-gap: 3px;
+}
