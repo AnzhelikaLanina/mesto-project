@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+<script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="03b78ada3425e9132ff3.svg" alt="логотип место">
+    </header>
+    <main>
+        <section class="profile">
+            <div class="profile__card">
+                <div class="profile__avatar-container">
+                    <img class="profile__avatar" src="#" alt="изображения профиля">
+                </div>
+                <div class="profile__info">
+                    <div class="profile__container">
+                        <h1 class="profile__name"></h1>
+                        <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
+                    </div>
+                    <p class="profile__caption"></p>
+                </div>
+            </div>
+            <button type="button" class="profile__add-button" aria-label="Добавить"></button>
+        </section>
+        <section>
+            <ul class="elements">
+
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+    <div class="popup" id="popup_edit-form">
+        <div class="popup__container">
+            <button type="button" class="popup__close-button" aria-label="Закрыть окно"></button>
+            <form class="popup__form" name="edit-form" novalidate>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <fieldset class="popup__fieldset">
+                    <input name="name" id="popup__name" type="text" class="popup__field" pattern="^[a-zA-ZА-Яа-яёЁ -]+$"
+                           data-error-message="Разрешены только латинские буквы, кириллические буквы, знаки дефиса и пробелы"
+                    placeholder="Имя" minlength="2" maxlength="40" required>
+                    <span class="popup__name-error"></span>
+                    <input name="caption" id="popup__caption" type="text" class="popup__field" pattern="^[a-zA-ZА-Яа-яёЁ -]+$"
+                           data-error-message="Разрешены только латинские буквы, кириллические буквы, знаки дефиса и пробелы"
+                    placeholder="Вид деятельности" minlength="2" maxlength="200" required>
+                    <span class="popup__caption-error"></span>
+                </fieldset>
+                <button type="submit" id='edit-save' class="popup__submit-button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup" id='popup_add-form'>
+        <div class="popup__container">
+            <button type="button" class="popup__close-button" aria-label="Закрыть окно"></button>
+            <form class="popup__form" name="add-form" novalidate>
+                <h2 class="popup__title">Новое место</h2>
+                <fieldset class="popup__fieldset">
+                    <input name="name-card" id="popup__name-card" type="text" class="popup__field" pattern="^[a-zA-ZА-Яа-яёЁ -]+$"
+                           data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
+                    placeholder="Название" minlength="2" maxlength="30" required>
+                    <span class="popup__name-card-error"></span>
+                    <input name="link" id="popup__link" type="url" class="popup__field" placeholder="Ссылка на картинку" required>
+                    <span class="popup__link-error"></span>
+                </fieldset>
+                <button type="submit" class="popup__submit-button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_show-image" id='popup_show-image'>
+        <figure class="popup__figure">
+            <button type="button" class="popup__close-button" aria-label="Закрыть окно"></button>
+            <img class='popup__image' src="#" alt="#">
+            <figcaption class="popup__caption"></figcaption>
+        </figure>
+    </div>
+    <div class="popup popup_update-avatar" id='popup_update-avatar'>
+        <div class="popup__container">
+            <button type="button" class="popup__close-button" aria-label="Закрыть окно"></button>
+            <form class="popup__form" name="update-avatar-form" novalidate>
+                <h2 class="popup__title">Обновить аватар</h2>
+                <fieldset class="popup__fieldset popup__fieldset_update-avatar">
+                    <input name="link-avatar" id="popup__link-avatar" type="url"
+                           class="popup__field popup__field_update-avatar" placeholder="Ссылка на картинку" required>
+                    <span class="popup__link-avatar-error"></span>
+                </fieldset>
+                <button type="submit" class="popup__submit-button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <div class="popup popup_delete-card" id='popup_delete-card'>
+        <div class="popup__container">
+            <button type="button" class="popup__close-button" aria-label="Закрыть окно"></button>
+            <div class="popup__fieldset popup__fieldset_delete-card">
+                <h2 class="popup__title">Вы уверены?</h2>
+                <button type="submit" class="popup__submit-button">Да</button>
+            </div>
+        </div>
+    </div>
+
+    <template id="card" >
+        <li class="element">
+            <button type="button" class="element__delete-button" aria-label="Удалить"></button>
+            <img class='element__image' src="#" alt="#">
+            <div class="element__caption">
+                <h2 class="element__text"></h2>
+                <div class="element__container">
+                    <button type="button" class="element__like-button" aria-label="Поставить лайк"></button>
+                    <span class="element__count"></span>
+                </div>
+            </div>
+        </li>
+    </template>
+</body>
