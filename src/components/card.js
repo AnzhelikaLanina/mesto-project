@@ -1,11 +1,9 @@
-import {closePopup, openPopup} from "./modal";
+import {openPopup} from "./modal";
 import {
     initialTemplate,
     imagePopupShowImage,
     captionPopupShowImage,
-    popupShowImage,
-    popupDeleteCard,
-    buttonDeleteCard
+    popupShowImage
 } from "./index";
 import {deleteDataCard, deleteLike, putLike} from './api.js'
 
@@ -67,20 +65,15 @@ export function createCard(userId,card) {
 
     if(userId !== card.owner._id) {
         buttonDelete.remove();
-    } else{
+    } else {
         buttonDelete.addEventListener('click', function (evt) {
-            const cardDelete = evt.target.closest('.element');
-            openPopup(popupDeleteCard);
-            buttonDeleteCard.addEventListener('click', function () {
-                deleteDataCard(card._id)
-                    .then(() => {
-                        cardDelete.remove();
-                        closePopup(popupDeleteCard);
-                    })
-                    .catch((err) => {
-                        console.log(err);
-                    });
-            });
+            deleteDataCard(card._id)
+                .then(() => {
+                    evt.target.closest('.element').remove();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         });
     }
     return initialCardsElement;

@@ -1,9 +1,9 @@
-.popup__field-error_active {
-    opacity: 1;
-    transition: 0.3s;
+.popup__field-text {
+    opacity: 0;
+    padding-top: 5px;
+    min-height: 30px;
     color: rgba(255, 0, 0, 1);
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
-    padding-top: 5px;
 }

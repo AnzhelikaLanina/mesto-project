@@ -15,9 +15,6 @@
     padding-bottom: 12px;
 }
 
-.popup__field:last-of-type {
-    padding-top: 27px;
-}
 
 @media screen and (max-width: 540px) {
     .popup__field {

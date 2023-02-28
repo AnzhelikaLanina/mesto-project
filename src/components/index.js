@@ -38,45 +38,42 @@ const jobProfile = document.querySelector('.profile__caption');
 const avatarProfile = document.querySelector('.profile__avatar');
 const buttonUpdateAvatar = document.querySelector('.profile__avatar-container');
 
-export const popupDeleteCard = document.querySelector('#popup_delete-card');
-export const buttonDeleteCard = popupDeleteCard.querySelector('.popup__submit-button');
-
 function updateAvatarProfile(evt){
     evt.preventDefault();
-
-    avatarProfile.src = linkAvatar.value;
     buttonSubmitPopupUpdateAvatar.textContent = 'Сохранение...';
 
     updateDataProfileAvatar(avatarProfile.src)
-        .then((data) => {
-            data.avatar = avatarProfile.src;
+        .then(() => {
+            avatarProfile.src = linkAvatar.value;
             closePopup(popupUpdateAvatar);
             formUpdateAvatar.reset ();
         })
         .catch((err) => {
             console.log(err);
-        });
+        })
+        .finally(()=> {
+            buttonSubmitPopupUpdateAvatar.textContent = 'Сохранить';
+        })
 }
 
 function editProfile (evt) {
     evt.preventDefault();
 
-    const newNameProfile = nameInputPopupEditForm.value;
-    const newJobProfile = jobInputPopupEditForm.value;
-
     buttonSubmitPopupEditForm.textContent = 'Сохранение...';
-    nameProfile.textContent = newNameProfile;
-    jobProfile.textContent = newJobProfile;
 
-    updateDataProfile(nameProfile.textContent,jobProfile.textContent)
+    updateDataProfile(nameInputPopupEditForm.value,jobInputPopupEditForm.value)
         .then((data) => {
-            data.name = nameProfile.textContent;
-            data.about = jobProfile.textContent;
+            nameProfile.textContent = data.name;
+            jobProfile.textContent = data.about;
+
             closePopup(popupEditProfile);
         })
         .catch((err) => {
             console.log(err);
-        });
+        })
+        .finally(() => {
+            buttonSubmitPopupEditForm.textContent = 'Сохранить';
+        })
 }
 
 closeButtons.forEach((button) => {
@@ -99,11 +96,9 @@ formEditForm.addEventListener('submit', editProfile);
 formAddCard.addEventListener('submit', function (evt) {
     evt.preventDefault();
 
-    const name = nameCardInputPopupAddForm.value;
-    const link = linkInputPopupAddForm.value;
     buttonSubmitPopupAddForm.textContent = 'Сохранение...';
 
-    addDataCard(name,link)
+    addDataCard(nameCardInputPopupAddForm.value,linkInputPopupAddForm.value)
         .then((card) => {
             const userId = card.owner._id;
             const cardsElement = createCard(userId,card);
@@ -115,7 +110,10 @@ formAddCard.addEventListener('submit', function (evt) {
         })
         .catch((err) => {
             console.log(err); // выводим ошибку в консоль
-        });
+        })
+        .finally(() => {
+            buttonSubmitPopupAddForm.textContent = 'Сохранить';
+        })
 });
 
 buttonUpdateAvatar.addEventListener('click',function(){
