@@ -42,9 +42,9 @@ function updateAvatarProfile(evt){
     evt.preventDefault();
     buttonSubmitPopupUpdateAvatar.textContent = 'Сохранение...';
 
-    updateDataProfileAvatar(avatarProfile.src)
-        .then(() => {
-            avatarProfile.src = linkAvatar.value;
+    updateDataProfileAvatar(linkAvatar.value)
+        .then((data) => {
+            avatarProfile.src = data.avatar;
             closePopup(popupUpdateAvatar);
             formUpdateAvatar.reset ();
         })
